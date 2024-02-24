@@ -14,12 +14,25 @@ var generateBtn = document.querySelector("#generate");
 function userInput() {
   var length = prompt("How many characters do your password need to be?");
   console.log(length);
+  if (length < 8 || length > 128) {
+    alert("Please pick a number between 8 and 128")
+  }
+
+var isLowerCase = confirm("Do you need lowercase letters?")
+console.log(isLowerCase);
+var isUpperCase = confirm("Do you need uppercase letters?")
+console.log(isUpperCase);
+var isNumbers = confirm("Do you need numbers?")
+console.log(isNumbers);
+var isSpecialChars = confirm("Do you need special characters?")
+console.log(isSpecialChars);
+
 }
 
 
 
 // Take user inputs and generate password
-function generatePassword(){
+function generatePassword() {
   var options = userInput();
 }
 
