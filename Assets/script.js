@@ -14,8 +14,9 @@ var generateBtn = document.querySelector("#generate");
 function userInput() {
   var length = prompt("How many characters do your password need to be?");
   console.log(length);
-  if (length < 8 || length > 128) {
+  while (length < 8 || length > 128) {
     alert("Please pick a number between 8 and 128")
+    var length = prompt("How many characters do your password need to be?");
   }
 
 var isLowerCase = confirm("Do you need lowercase letters?")
@@ -26,6 +27,14 @@ var isNumbers = confirm("Do you need numbers?")
 console.log(isNumbers);
 var isSpecialChars = confirm("Do you need special characters?")
 console.log(isSpecialChars);
+
+while (isLowerCase === false && isUpperCase === false && isNumbers === false && isSpecialChars === false) {
+  alert("You must choose at least one character option")
+  var isLowerCase = confirm("Do you need lowercase letters?")
+  var isUpperCase = confirm("Do you need uppercase letters?")
+  var isNumbers = confirm("Do you need numbers?")
+  var isSpecialChars = confirm("Do you need special characters?")
+}
 
 }
 
